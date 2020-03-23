@@ -3,6 +3,7 @@ package utils
 import (
 	"os"
 	"path/filepath"
+	"strings"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -18,7 +19,10 @@ func FileExists(filename string) bool {
 func WalkPath(walkPath string) []string {
 	var files []string
 	err := filepath.Walk(walkPath, func(path string, info os.FileInfo, err error) error {
-		files = append(files, path)
+		name := info.Name()
+		if strings.Contains(name, ".json") {
+			files = append(files, name)
+		}
 		return nil
 	})
 	if err != nil {

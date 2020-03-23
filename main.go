@@ -40,4 +40,8 @@ func main() {
 	}
 	log.Infof("CSGO is installed under: %s", csgopath)
 
+	files := utils.WalkPath(csgopath + `\ev0lve`)
+	for _, file := range files {
+		log.Info(file)
+	}
 }
