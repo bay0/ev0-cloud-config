@@ -1,10 +1,11 @@
 package main
 
 import (
-	"ev0CloudConfig/config"
+	"ev0CloudConfig/gui"
 	"ev0CloudConfig/logging"
 	"ev0CloudConfig/registryReader"
 	"ev0CloudConfig/utils"
+
 	"os"
 
 	"github.com/andygrunwald/vdf"
@@ -13,7 +14,6 @@ import (
 
 func init() {
 	logging.Init()
-	config.Init()
 }
 
 func main() {
@@ -40,8 +40,9 @@ func main() {
 	}
 	log.Infof("CSGO is installed under: %s", csgopath)
 
-	files := utils.WalkPath(csgopath + `\ev0lve`)
-	for _, file := range files {
+	configs := utils.WalkPath(csgopath + `\ev0lve`)
+	for _, file := range configs {
 		log.Info(file)
 	}
+	gui.Init(configs)
 }

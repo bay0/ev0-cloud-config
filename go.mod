@@ -3,6 +3,7 @@ module ev0CloudConfig
 go 1.13
 
 require (
+	fyne.io/fyne v1.2.3
 	github.com/andygrunwald/vdf v1.0.0
 	github.com/fsnotify/fsnotify v1.4.9
 	github.com/google/go-github v17.0.0+incompatible // indirect
@@ -16,4 +17,5 @@ require (
 	github.com/spf13/viper v1.6.2
 	github.com/x-cray/logrus-prefixed-formatter v0.5.2
 	golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae
+	honnef.co/go/tools v0.0.0-20190102054323-c2f93a96b099
 )
