@@ -1,20 +1,15 @@
 package logging
 
 import (
-	"fmt"
-	"io"
-	"os"
-
-	"github.com/shiena/ansicolor"
 	log "github.com/sirupsen/logrus"
 	prefixed "github.com/x-cray/logrus-prefixed-formatter"
 )
 
 // Init initialize logrus and the logs.log
 func Init() {
-	var filename = "logs.log"
+	//var filename = "logs.log"
 	// Create the log file if doesn't exist. And append to it if it already exists.
-	f, err := os.OpenFile(filename, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0644)
+	//f, err := os.OpenFile(filename, os.O_WRONLY|os.O_APPEND|os.O_CREATE, 0644)
 	Formatter := new(prefixed.TextFormatter)
 	// You can change the Timestamp format. But you have to use the same date and time.
 	// "2006-02-02 15:04:06" Works. If you change any digit, it won't work
@@ -26,11 +21,11 @@ func Init() {
 	Formatter.ForceColors = true
 
 	log.SetFormatter(Formatter)
-	mw := io.MultiWriter(os.Stdout, f)
-	if err != nil {
-		// Cannot open log file. Logging to stderr
-		fmt.Println(err)
-	} else {
-		log.SetOutput(ansicolor.NewAnsiColorWriter(mw))
-	}
+	//mw := io.MultiWriter(os.Stdout, f)
+	//if err != nil {
+	// Cannot open log file. Logging to stderr
+	//	fmt.Println(err)
+	//} else {
+	//	log.SetOutput(ansicolor.NewAnsiColorWriter(mw))
+	//}
 }

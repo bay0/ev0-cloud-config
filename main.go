@@ -4,7 +4,7 @@ import (
 	"context"
 	"ev0CloudConfig/config"
 	"ev0CloudConfig/logging"
-	"ev0CloudConfig/registryReader"
+	"ev0CloudConfig/registryreader"
 	"ev0CloudConfig/ui"
 	"ev0CloudConfig/utils"
 
@@ -24,8 +24,8 @@ func init() {
 
 func main() {
 	csgopathstring := `\steamapps\common\Counter-Strike Global Offensive`
-	steampath := registryReader.GetStringFromLocalMachine(`SOFTWARE\Wow6432Node\Valve\Steam`, "InstallPath")
-	steamlanguage := registryReader.GetStringFromLocalMachine(`SOFTWARE\Wow6432Node\Valve\Steam`, "Language")
+	steampath := registryreader.GetStringFromLocalMachine(`SOFTWARE\Wow6432Node\Valve\Steam`, "InstallPath")
+	steamlanguage := registryreader.GetStringFromLocalMachine(`SOFTWARE\Wow6432Node\Valve\Steam`, "Language")
 	log.Infof("Steam is installed under: %s", steampath)
 	log.Infof("Steam default language is: %s", steamlanguage)
 
