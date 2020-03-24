@@ -1,8 +1,8 @@
 <h1  align="center">ev0-cloud-config</h1>
 
 <p>
-
-<img  alt="Version"  src="https://img.shields.io/badge/version-0.1-blue.svg?cacheSeconds=2592000"  />
+<img  alt="Go Report Card"  src="https://goreportcard.com/badge/github.com/bay0/ev0-cloud-config"  />
+<img  alt="Version"  src="https://img.shields.io/badge/version-0.2-blue.svg?cacheSeconds=2592000"  />
 
 <a  href="#"  target="_blank">
 
