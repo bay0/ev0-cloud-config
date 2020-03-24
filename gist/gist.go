@@ -9,6 +9,7 @@ import (
 	"github.com/spf13/viper"
 )
 
+// Create pushes file to github gist
 func Create(client *github.Client, configFilepath string, filename string) (*github.Gist, error) {
 	ctx := context.Background()
 	f := make(map[github.GistFilename]github.GistFile)
