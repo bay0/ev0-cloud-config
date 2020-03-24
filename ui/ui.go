@@ -4,6 +4,8 @@ import (
 	"encoding/base64"
 	"ev0CloudConfig/gist"
 	"image"
+
+	// Required for evologo
 	_ "image/png"
 	"os"
 	"strings"
