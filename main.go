@@ -1,6 +1,8 @@
 package main
 
 import (
+	"context"
+	"ev0CloudConfig/config"
 	"ev0CloudConfig/logging"
 	"ev0CloudConfig/registryReader"
 	"ev0CloudConfig/ui"
@@ -9,11 +11,15 @@ import (
 	"os"
 
 	"github.com/andygrunwald/vdf"
+	"github.com/google/go-github/github"
 	log "github.com/sirupsen/logrus"
+	"github.com/spf13/viper"
+	"golang.org/x/oauth2"
 )
 
 func init() {
 	logging.Init()
+	config.Init()
 }
 
 func main() {
@@ -41,5 +47,15 @@ func main() {
 	log.Infof("CSGO is installed under: %s", csgopath)
 
 	configs := utils.WalkPath(csgopath + `\ev0lve`)
-	ui.UI(configs)
+
+	//github
+	ctx := context.Background()
+	accessToken := viper.GetString("accessToken")
+	ts := oauth2.StaticTokenSource(
+		&oauth2.Token{AccessToken: accessToken},
+	)
+	tc := oauth2.NewClient(ctx, ts)
+	client := github.NewClient(tc)
+
+	ui.UI(configs, csgopath, client)
 }

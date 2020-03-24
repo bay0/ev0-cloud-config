@@ -17,8 +17,15 @@
 ## Usage
 
 ```sh
+Create a personal access token with the right to create gists
+
+Add the token in the config.json
 
 Run the binary
+
+Press enter on a config file to upload it
+
+It will be copied to the clipboard
 
 Choose config to share
 
