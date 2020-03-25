@@ -115,7 +115,7 @@ func UI(configs []string, csgopath string, client *github.Client) {
 		}
 
 		p := widgets.NewParagraph()
-		p.Text = "-> Use vi controls or up and down to navigate\n-> Press enter to upload the config to github gist\n-> URL will be copied to the clipboard \n-> q to exit\n-> Made by bay"
+		p.Text = "-> Use vi controls or up and down to navigate\n-> Press x to backup all configs\n-> Press enter to upload the config to github gist\n-> URL will be copied to the clipboard \n-> q to exit\n-> Made by bay"
 		p.Title = "ev0-cloud-config"
 
 		image, _, _ := image.Decode(base64.NewDecoder(base64.StdEncoding, strings.NewReader(evologo)))
