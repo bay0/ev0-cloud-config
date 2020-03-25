@@ -3,7 +3,7 @@
 <p>
 <img  alt="Go Report Card"  src="https://goreportcard.com/badge/github.com/bay0/ev0-cloud-config"  />
 <img  alt="Workflow Build"  src="https://github.com/bay0/ev0-cloud-config/workflows/build/badge.svg"  />
-<img  alt="Version"  src="https://img.shields.io/badge/version-0.2-blue.svg?cacheSeconds=2592000"  />
+<img  alt="Version"  src="https://img.shields.io/badge/version-0.3-blue.svg?cacheSeconds=2592000"  />
 
 <a  href="#"  target="_blank">
 
@@ -24,7 +24,7 @@ Add the token in the config.json
 
 Run the binary
 
-Press enter on a config file to upload it
+Press enter on a config file to upload it or x to backup all configs
 
 It will be copied to the clipboard
 
